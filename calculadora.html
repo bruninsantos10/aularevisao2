@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .calculator {
+        width: 200px;
+        margin: 50px auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"], input[type="button"] {
+        width: 100%;
+        margin: 5px 0;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+    }
+    input[type="button"] {
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+    }
+    input[type="button"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" id="num1" placeholder="Digite o primeiro número">
+    <input type="text" id="num2" placeholder="Digite o segundo número">
+    <input type="button" value="+" onclick="soma()">
+    <input type="button" value="-" onclick="subtracao()">
+    <input type="button" value="*" onclick="multiplicacao()">
+    <input type="button" value="/" onclick="divisao()">
+    <input type="text" id="resultado" placeholder="Resultado" readonly>
+</div>
+
+<script>
+    function soma() {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+        var resultado = num1 + num2;
+        document.getElementById('resultado').value = resultado;
+    }
+
+    function subtracao() {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+        var resultado = num1 - num2;
+        document.getElementById('resultado').value = resultado;
+    }
+
+    function multiplicacao() {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+        var resultado = num1 * num2;
+        document.getElementById('resultado').value = resultado;
+    }
+
+    function divisao() {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+        if (num2 === 0) {
+            alert("Não é possível dividir por zero.");
+            return;
+        }
+        var resultado = num1 / num2;
+        document.getElementById('resultado').value = resultado;
+    }
+</script>
+
+</body>
+</html>
 
